@@ -1,2 +1,2 @@
-# spotify-mini
+# Spotify Mini
 This is a mini Spotify clone built on ReactJS.
