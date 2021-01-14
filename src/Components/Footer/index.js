@@ -20,8 +20,8 @@ function Footer() {
           className="footer__albumLogo"
         />
         <div className="footer__songInfo">
-          <h4>My favorite song</h4>
-          <p>Spooky Boy</p>
+          <h4>My fav song</h4>
+          <p>Atharva</p>
         </div>
       </div>
       <div className="footer__center">

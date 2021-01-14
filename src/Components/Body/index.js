@@ -4,7 +4,7 @@ import { useDataLayerValue } from "../../Data/DataLayer";
 import { PlayCircleFilled, Favorite, MoreHoriz } from "@material-ui/icons";
 import SongRow from "../SongRow";
 
-function Body() {
+function Body({ spotify }) {
   const [{ discover_weekly }, dispatch] = useDataLayerValue();
 
   return (
