@@ -15,13 +15,13 @@ function Footer() {
     <div className="footer">
       <div className="footer__left">
         <img
-          src="https://i.pinimg.com/originals/8d/c7/52/8dc752834195102e4cb630a53221255e.jpg"
+          src="https://i1.sndcdn.com/artworks-wR0hBwwKpJXU-0-t500x500.jpg"
           alt=""
           className="footer__albumLogo"
         />
         <div className="footer__songInfo">
-          <h4>My fav song</h4>
-          <p>Atharva</p>
+          <h4>Sofia</h4>
+          <p>Tiny Meat Gang</p>
         </div>
       </div>
       <div className="footer__center">

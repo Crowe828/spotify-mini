@@ -41,12 +41,12 @@
   align-items: center;
 }
 
-.body__icons > .MultiSvgIcon-root {
+.body__icons > .MuiSvgIcon-root {
   margin-right: 20px;
 }
 
 .body__shuffle {
-  font-size: 80px;
+  font-size: 80px !important;
   margin-left: 50px;
   margin-top: 20px;
   margin-bottom: 20px;
