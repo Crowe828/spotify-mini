@@ -20,7 +20,7 @@ const reducer = (state, action) => {
         ...state,
         token: action.token,
       };
-    case "SET_PLAYLIST":
+    case "SET_PLAYLISTS":
       return {
         ...state,
         playlists: action.playlists,
