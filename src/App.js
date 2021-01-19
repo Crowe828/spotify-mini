@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Login from "../src/Components/Login";
 import "./App.css";
-import { getTokenFromUrl } from "./Spotify";
+import { getTokenFromUrl } from "./spotify";
 import SpotifyWebApi from "spotify-web-api-js";
 import Player from "../src/Components/Player";
 import { useDataLayerValue } from "../src/Data/DataLayer";
@@ -10,7 +10,7 @@ const spotify = new SpotifyWebApi();
 
 function App() {
   const [{ user, token }, dispatch] = useDataLayerValue();
-
+// Run code based on the users token
   useEffect(() => {
     const hash = getTokenFromUrl();
     window.location.hash = "";
@@ -48,6 +48,7 @@ function App() {
   }, []);
 
   return (
+    // BEM
     <div className="App">
       {token ? <Player spotify={spotify} /> : <Login />}
     </div>

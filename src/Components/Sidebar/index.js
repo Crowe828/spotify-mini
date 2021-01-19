@@ -12,7 +12,7 @@ function Sidebar() {
     <div className="sidebar">
       <img
         className="sidebar__logo"
-        src="https://music-b26f.kxcdn.com/wp-content/uploads/2017/06/635963274692858859903160895_spotify-logo-horizontal-black.jpg"
+        src="https://getheavy.com/wp-content/uploads/2019/12/spotify2019-830x350.jpg"
         alt="Spotify logo"
       />
 
@@ -20,10 +20,10 @@ function Sidebar() {
       <SidebarOption title="Search" Icon={SearchIcon} />
       <SidebarOption title="Your Library" Icon={LibraryMusic} />
       <br />
-      <strong className="sidebar__title">PLAYLISTS</strong>
+      <strong className="sidebar__title">Playlists</strong>
       <hr />
       {playlists?.items?.map((playlist) => (
-        <SidebarOption title={playlist.name} />
+        <SidebarOption title={playlist.name} key={playlist.id} />
       ))}
     </div>
   );
