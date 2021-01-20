@@ -1,7 +1,8 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { useDataLayerValue } from "../../Data/DataLayer";
 import {
   PlayCircleOutline,
+  PauseCircleOutline,
   SkipPrevious,
   SkipNext,
   PlaylistPlay,
@@ -18,13 +19,10 @@ function Footer({ spotify }) {
   useEffect(() => {
     // res = response from Spotify
     spotify.getMyCurrentPlaybackState().then((res) => {
-      console.log(res, "this is the response");
-
       dispatch({
         type: "SET_PLAYING",
         playing: res.is_playing,
       });
-
       dispatch({
         type: "SET_ITEM",
         item: res.item,
@@ -104,9 +102,23 @@ function Footer({ spotify }) {
 
       <div className="footer__center">
         <Shuffle className="footer__green" />
-        <SkipPrevious className="footer__icon" />
-        <PlayCircleOutline fontSize="large" className="footer__icon" />
-        <SkipNext className="footer__icon" />
+        <SkipPrevious onClick={skipPrevious} className="footer__icon" />
+        {playing ? (
+          <PauseCircleOutline
+            onClick={handlePlayPause}
+            fontSize="large"
+            className="footer__icon"
+          />
+        ) : (
+          <PlayCircleOutline
+            onClick={handlePlayPause}
+            fontSize="large"
+            className="footer__icon"
+          />
+        )}
+
+        <SkipNext onClick={skipNext} className="footer__icon" />
+
         <Repeat className="footer__green" />
       </div>
       <div className="footer__right">
@@ -118,7 +130,7 @@ function Footer({ spotify }) {
             <VolumeDown />
           </Grid>
           <Grid item xs>
-            <Slider />
+            <Slider aria-labelledby="continuous-slider" />
           </Grid>
         </Grid>
       </div>

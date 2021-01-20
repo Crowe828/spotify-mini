@@ -6,7 +6,47 @@ import SongRow from "../SongRow";
 
 function Body({ spotify }) {
   const [{ discover_weekly }, dispatch] = useDataLayerValue();
-  
+
+  // Play the entire Discover Weekly playlist
+  const playPlaylist = (id) => {
+    spotify
+      .play({
+        context_uri: `spotify:playlist:37i9dQZEVXcI6FJRcXWE9m`,
+      })
+      .then((res) => {
+        spotify.getMyCurrentPlayingTrack().then((res) => {
+          dispatch({
+            type: "SET_ITEM",
+            item: res.item,
+          });
+          dispatch({
+            type: "SET_PLAYING",
+            playing: true,
+          });
+        });
+      });
+  };
+
+  // Play one specific song from the playlist
+  const playSong = (id) => {
+    spotify
+      .play({
+        uris: [`spotify:track:${id}`],
+      })
+      .then((res) => {
+        spotify.getMyCurrentPlayingTrack().then((res) => {
+          dispatch({
+            type: "SET_ITEM",
+            item: res.item,
+          });
+          dispatch({
+            type: "SET_PLAYING",
+            playing: true,
+          });
+        });
+      });
+  };
+
   return (
     <div className="body">
       <Header spotify={spotify} />
@@ -20,13 +60,15 @@ function Body({ spotify }) {
       </div>
       <div className="body__songs">
         <div className="body__icons">
-          <PlayCircleFilled className="body__shuffle" />
+          {/* Play playlist */}
+          <PlayCircleFilled className="body__shuffle" onClick={playPlaylist} />
           <Favorite fontSize="large" />
           <MoreHoriz />
         </div>
         {/* List of songs */}
         {discover_weekly?.tracks.items.map((item) => (
-          <SongRow track={item.track} key={item.track.id} />
+          // Play song
+          <SongRow playSong={playSong} track={item.track} key={item.track.id} />
         ))}
       </div>
     </div>
