@@ -24,6 +24,7 @@ function Body({ spotify }) {
           <Favorite fontSize="large" />
           <MoreHoriz />
         </div>
+        {/* List of songs */}
         {discover_weekly?.tracks.items.map((item) => (
           <SongRow track={item.track} key={item.track.id} />
         ))}

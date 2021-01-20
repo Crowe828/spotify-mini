@@ -4,7 +4,7 @@
   justify-content: space-evenly;
   bottom: 0;
   height: 65px;
-  width: 100%;
+  width: 97%;
   background-color: #282828;
   padding: 20px;
 }
@@ -60,6 +60,6 @@
   transform: scale(1.2) !important;
 }
 
-.footer__right * .MultiSlider-root {
+.footer__right * .MuiSlider-root {
   color: #1ed15e;
 }
