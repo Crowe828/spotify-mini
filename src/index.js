@@ -1,9 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import * as serviceWorker from "./serviceWorker";
 import "./index.css";
-import { DataLayer } from "../src/Data/DataLayer";
+import { DataLayer } from "../src/Data/dataLayer";
 import App from "./App";
-import reducer, { initialState } from "../src/Data/Reducer";
+import reducer, { initialState } from "../src/Data/reducer";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -14,3 +15,4 @@ ReactDOM.render(
   document.getElementById("root")
 );
 
+serviceWorker.unregister();

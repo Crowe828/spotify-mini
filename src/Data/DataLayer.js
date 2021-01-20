@@ -1,6 +1,6 @@
 import { createContext, useContext, useReducer } from "react";
 
-// Data Layer
+// Standard data layer
 export const DataLayerContext = createContext();
 
 export const DataLayer = ({ initialState, reducer, children }) => (

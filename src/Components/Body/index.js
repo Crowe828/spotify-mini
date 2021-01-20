@@ -1,19 +1,19 @@
-import "./style.css";
+import { useDataLayerValue } from "../../Data/dataLayer";
 import Header from "../Header";
-import { useDataLayerValue } from "../../Data/DataLayer";
-import { PlayCircleFilled, Favorite, MoreHoriz } from "@material-ui/icons";
 import SongRow from "../SongRow";
+import { PlayCircleFilled, Favorite, MoreHoriz } from "@material-ui/icons";
+import "./Body.css";
 
 function Body({ spotify }) {
   const [{ discover_weekly }, dispatch] = useDataLayerValue();
 
   // Play the entire Discover Weekly playlist
-  const playPlaylist = (id) => {
+  const playPlaylist = () => {
     spotify
       .play({
         context_uri: `spotify:playlist:37i9dQZEVXcI6FJRcXWE9m`,
       })
-      .then((res) => {
+      .then(() => {
         spotify.getMyCurrentPlayingTrack().then((res) => {
           dispatch({
             type: "SET_ITEM",
@@ -49,6 +49,7 @@ function Body({ spotify }) {
 
   return (
     <div className="body">
+      {/* Searchbar, user name, user image */}
       <Header spotify={spotify} />
       <div className="body__info">
         <img src={discover_weekly?.images[0]?.url} alt="" />

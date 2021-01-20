@@ -1,10 +1,9 @@
 import { useEffect } from "react";
 import SpotifyWebApi from "spotify-web-api-js";
 import { getTokenFromUrl } from "./spotify";
-import { useDataLayerValue } from "../src/Data/DataLayer";
+import { useDataLayerValue } from "../src/Data/dataLayer";
 import Login from "../src/Components/Login";
 import Player from "../src/Components/Player";
-import "./App.css";
 
 const spotify = new SpotifyWebApi();
 
@@ -24,6 +23,7 @@ function App() {
         token: _token,
       });
 
+      // If they have a token set the user as the profile which appears on the screen
       spotify.getMe().then((user) => {
         dispatch({
           type: "SET_USER",
@@ -31,6 +31,7 @@ function App() {
         });
       });
 
+      // Display the user's playlists in the sidebar
       spotify.getUserPlaylists().then((playlists) => {
         dispatch({
           type: "SET_PLAYLISTS",
@@ -38,6 +39,7 @@ function App() {
         });
       });
 
+      // User's discover weekly playlist
       spotify.getPlaylist("37i9dQZEVXcI6FJRcXWE9m").then((playlist) => {
         dispatch({
           type: "SET_DISCOVER_WEEKLY",
@@ -45,10 +47,12 @@ function App() {
         });
       });
 
+      // User's top artists
       spotify.getMyTopArtists().then((playlist) => {
         dispatch({ type: "SET_TOP_ARTISTS", top_artists: playlist });
       });
 
+      // default dispatch for Spotify's API
       dispatch({
         type: "SET_SPOTIFY",
         spotify,
@@ -57,8 +61,8 @@ function App() {
   }, [token, dispatch]);
 
   return (
-    // BEM
     <div className="App">
+      {/* If the user isn't logged in, show the login page. If logged in, show the player page */}
       {token ? <Player spotify={spotify} /> : <Login />}
     </div>
   );

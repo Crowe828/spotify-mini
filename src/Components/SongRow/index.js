@@ -1,9 +1,8 @@
-import "./style.css";
+import "./SongRow.css";
 
 function SongRow({ track, playSong }) {
-  console.log(track);
-
   return (
+    // Dynamically render a row for each song in a playlist
     <div className="songRow" onClick={() => playSong(track.id)}>
       <img src={track.album.images[0].url} alt="" className="songRow__album" />
       <div className="songRow__info">

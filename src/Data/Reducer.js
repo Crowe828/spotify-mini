@@ -10,10 +10,9 @@ export const initialState = {
 };
 
 const reducer = (state, action) => {
-  console.log(action);
-
   // Action -> type, [payload]
   switch (action.type) {
+    // Setting Spotify API
     case "SET_SPOTIFY":
       return {
         ...state,
@@ -24,6 +23,7 @@ const reducer = (state, action) => {
         ...state,
         user: action.user,
       };
+    // The user's personal token
     case "SET_TOKEN":
       return {
         ...state,
@@ -49,6 +49,7 @@ const reducer = (state, action) => {
         ...state,
         playing: action.playing,
       };
+    // Used in play/pause and skipNext/skipPrevious
     case "SET_ITEM":
       return {
         ...state,
