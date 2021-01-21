@@ -2,18 +2,27 @@
   display: grid;
   place-items: center;
   height: 100vh;
+  min-height: 500px;
+  width: 100%;
   background-color: black;
+  /* position: fixed; */
 }
 
 .login > img {
-  width: 100%;
+  width: 65%;
 }
 
 .login > a {
-  padding: 20px;
+  padding: 25px;
   border-radius: 99px;
+  font-size: 20px;
   font-weight: 800;
   color: white;
   text-decoration: none;
   background-color: #1db954;
+}
+
+.login > a:hover {
+  transition: transform 0.2 ease-in;
+  transform: scale(1.1) !important;
 }
