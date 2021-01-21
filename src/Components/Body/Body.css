@@ -1,5 +1,6 @@
 .body {
   height: 100vh;
+  min-height: 700px;
   flex: 0.8;
   color: white;
   padding: 30px;

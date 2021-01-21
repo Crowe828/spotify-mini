@@ -1,4 +1,5 @@
 export const initialState = {
+  library: null,
   spotify: null,
   token: null,
   user: null,
@@ -10,8 +11,14 @@ export const initialState = {
 };
 
 const reducer = (state, action) => {
+  console.log(action);
   // Action -> type, [payload]
   switch (action.type) {
+    case "SET_SAVED_TRACKS":
+      return {
+        ...state,
+        saved_tracks: action.saved_tracks,
+      };
     // Setting Spotify API
     case "SET_SPOTIFY":
       return {

@@ -31,6 +31,13 @@ function App() {
         });
       });
 
+      spotify.getMySavedTracks().then((playlist) => {
+        dispatch({
+          type: "SET_SAVED_TRACKS",
+          saved_tracks: playlist,
+        });
+      });
+
       // Display the user's playlists in the sidebar
       spotify.getUserPlaylists().then((playlists) => {
         dispatch({

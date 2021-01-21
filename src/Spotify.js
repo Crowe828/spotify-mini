@@ -4,6 +4,7 @@ const clientId = "17f4c5f3acec4c3284857be971d2565f";
 const state = "wH4949";
 
 const scopes = [
+  "user-library-read",
   "user-read-currently-playing",
   "user-read-recently-played",
   "user-read-playback-state",
