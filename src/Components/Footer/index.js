@@ -38,6 +38,7 @@ function Footer({ spotify }) {
         type: "SET_PLAYING",
         playing: false,
       });
+
       // Play
     } else {
       spotify.play();
