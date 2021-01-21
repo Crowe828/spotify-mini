@@ -1,5 +1,5 @@
 export const authEndpoint = "https://accounts.spotify.com/authorize";
-const redirectUri = "http://localhost:3000/";
+const redirectUri = "https://spotify-mini.web.app/";
 const clientId = "17f4c5f3acec4c3284857be971d2565f";
 const state = "wH4949";
 

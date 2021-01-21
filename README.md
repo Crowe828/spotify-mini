@@ -3,6 +3,8 @@
 [![made-with-Markdown](https://img.shields.io/badge/Made%20with-Markdown-1f425f.svg)](http://commonmark.org)
 [![license-badge](https://img.shields.io/badge/License-MIT-red.svg)](https://shields.io/)
 
+[Deployed App](https://spotify-mini.web.app/)
+
 ## Description
 
 A light web app built on Spotify's API to play music from a playlist built in React.
