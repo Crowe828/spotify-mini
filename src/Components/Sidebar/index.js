@@ -1,5 +1,5 @@
 import SidebarOption from "../SidebarOption";
-import { useDataLayerValue } from "../../Data/dataLayer";
+import { useDataLayerValue } from "../../Data/DataLayer";
 import HomeIcon from "@material-ui/icons/Home";
 import SearchIcon from "@material-ui/icons/Search";
 import { LibraryMusic } from "@material-ui/icons";

@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useDataLayerValue } from "../../Data/dataLayer";
+import { useDataLayerValue } from "../../Data/DataLayer";
 import { Grid, Slider } from "@material-ui/core";
 import {
   PlayCircleOutline,
